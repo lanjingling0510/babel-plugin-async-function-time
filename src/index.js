@@ -60,9 +60,9 @@ export default function({types: t}) {
                 const callName = parentIdentifier.name;
 
 				let buildFunction;
-                if ([opts.promise || []].indexOf(callName) !== -1) {
+                if (opts.promise && opts.promise.indexOf(callName) !== -1) {
 					buildFunction = buildPromiseTime;
-				} else if ([opts.async || []].indexOf(callName) !== -1) {
+				} else if (opts.async && opts.async.indexOf(callName) !== -1) {
 					buildFunction = buildAsyncTime;
 				} else {
 					return;
@@ -88,9 +88,9 @@ export default function({types: t}) {
                 const callName = parentIdentifier.name;
 
 				let buildFunction;
-                if ([opts.promise || []].indexOf(callName) !== -1) {
+                if (opts.promise && opts.promise.indexOf(callName) !== -1) {
 					buildFunction = buildPromiseTime;
-				} else if ([opts.async || []].indexOf(callName) !== -1) {
+				} else if (opts.async && opts.async.indexOf(callName) !== -1) {
 					buildFunction = buildAsyncTime;
 				} else {
 					return;
@@ -119,9 +119,9 @@ export default function({types: t}) {
                 const callName = identifier.name;
 
 				let buildFunction;
-                if ([opts.promise || []].indexOf(callName) !== -1) {
+                if (opts.promise && opts.promise.indexOf(callName) !== -1) {
 					buildFunction = buildPromiseTime;
-				} else if ([opts.async || []].indexOf(callName) !== -1) {
+				} else if (opts.async && opts.async.indexOf(callName) !== -1) {
 					buildFunction = buildAsyncTime;
 				} else {
 					return;
