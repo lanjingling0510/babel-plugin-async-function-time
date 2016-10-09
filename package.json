@@ -1,6 +1,6 @@
 {
   "name": "babel-plugin-async-function-time",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Help the developer to count the execution time of asynchronous function",
   "main": "lib/index.js",
   "scripts": {
