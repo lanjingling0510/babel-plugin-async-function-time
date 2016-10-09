@@ -1,0 +1,25 @@
+{
+  "name": "babel-plugin-async-function-time",
+  "version": "1.0.0",
+  "description": "Help the developer to count the execution time of asynchronous function",
+  "main": "lib/index.js",
+  "scripts": {
+    "build": "babel src/ -d lib/",
+    "test": "mocha -u bdd --compilers js:babel-core/register",
+    "release": "release"
+  },
+  "author": "rainie",
+  "license": "ISC",
+  "dependencies": {
+    "babel-template": "^6.16.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.16.0",
+    "babel-core": "^6.16.0",
+    "babel-plugin-add-module-exports": "^0.2.1",
+    "babel-preset-es2015": "^6.16.0",
+    "babel-preset-stage-0": "^6.16.0",
+    "chai": "^3.5.0",
+    "rf-release": "^0.4.0"
+  }
+}
