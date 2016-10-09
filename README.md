@@ -82,7 +82,7 @@ function fnNameB (fb) {
 };
 
 var obj = {
-    fnNameA(fb) {
+    fnNameB(fb) {
         setTimeout(function() {
             fb();
         }, 200);
