@@ -3,7 +3,7 @@
 
 A babel plugin of statistical Asynchronous Function Time, containing promise function and asynchronous callback function.
 
-- 中文
+- [中文](./README_CN.md)
 
 ## Usage
 
