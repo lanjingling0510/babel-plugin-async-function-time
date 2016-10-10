@@ -1,33 +1,31 @@
 # babel-plugin-async-function-time
 [![Travis][build-badge]][build] [![npm package][npm-badge]][npm]
 
-A babel plugin of statistical Asynchronous Function Time, containing promise function and asynchronous callback function.
+**一个babel组件:** 包裹异步函数，生成一个新的函数，增加记录异步函数执行时间的功能，不改变原来函数的功能。（包括promise函数和异步回调函数)
 
-- 中文
 
-## Usage
+## 使用
 
-### Install
+### 安装
 
-Using [npm](https://www.npmjs.com/):
+使用 [npm](https://www.npmjs.com/):
 
 	$ npm install babel-plugin-async-function-time -D
 
-configure in .babelrc(should transfer to json format) or any babel queries:
+在`.babelrc`中配置（应该转换成json格式）或者在任何的babel queries中。
 
+### 使用例子
 
-### Usage Example
-
-configure
+#### 配置
 ```javascript
 "plugins": [
     [
         "function-time", {
-			// A function that defines the execution time of the logging function, the execution time of the asynchronous function, and the arguments of the original function as arguments to the function
+            // 一个函数，自定义的记录函数执行时间的行为，异步函数的执行时间和原函数参数作为函数的参数
             "report": "(durning, props) => console.log('count:%sms', durning)",
-			// The array of promise function names to be logged
+            // 要记录的promise函数名数组
             "promise": ["fnNameA"],
-			// An array of asynchronous callback function names to be logged
+            // 要记录的异步回调函数名数组
             "async": ["fnNameB"]
         }
     ]
@@ -35,8 +33,11 @@ configure
 
 ```
 
-code for promise function
-```
+
+
+
+#### promise函数代码
+```javascript
 var fnNameA = function (str) {
     return new Promise(function(resolve) {
         setTimeout(function() {
@@ -47,7 +48,7 @@ var fnNameA = function (str) {
 
 fnNameA();
 
-// or
+// 或
 
 function fnNameA (str) {
     return new Promise(function(resolve) {
@@ -59,7 +60,7 @@ function fnNameA (str) {
 
 fnNameA();
 
-// or
+// 或
 
 var obj = {
     fnNameA(str) {
@@ -73,12 +74,12 @@ var obj = {
 
 obj.fnNameA();
 
-// count:204ms
+// 打印： “count:204ms”
 
 ```
 
-code for asynchronous callback function
-```
+#### 异步回调函数
+```javascript
 var fnNameB = function (fb) {
     setTimeout(function() {
         fb();
@@ -87,7 +88,7 @@ var fnNameB = function (fb) {
 
 fnNameB();
 
-// or
+// 或
 
 function fnNameB (fb) {
     setTimeout(function() {
@@ -97,7 +98,7 @@ function fnNameB (fb) {
 
 fnNameB();
 
-// or
+// 或
 
 var obj = {
     fnNameB(fb) {
@@ -107,9 +108,9 @@ var obj = {
     }
 };
 
-obj.fnNameB();
+fnNameB();
 
-// count:204ms
+// 打印： “count:204ms”
 
 ```
 
